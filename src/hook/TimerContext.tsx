@@ -27,7 +27,7 @@ const TimerContextProvider: FC = (props) => {
         autoStartBreak: false,
         autoStartPomo: false,
         longBreakInterval: 4,
-        notification: true,
+        notification: false,
       };
     }
   };
