@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-###view live project in [vercel](https://promodo.vercel.app/)
+##view live project in [https://promodo.vercel.app](https://promodo.vercel.app/)
+
+### Promodo is a customizable pomodoro timer inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
