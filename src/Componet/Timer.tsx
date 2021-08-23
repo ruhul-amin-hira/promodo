@@ -19,7 +19,6 @@ const Timer: React.FC = () => {
     currentInterval,
     setCurrentInterval,
     setResultBtn,
-    setRemaining,
     currentBtnObj,
   } = useContext(TimerContext);
   const [value, setValue] = useState(currentBtnObj.timeNow);
@@ -86,8 +85,10 @@ const Timer: React.FC = () => {
       let confirmation = window.confirm("Do you want to finish early?");
       console.log(confirmation);
       if (confirmation) {
-        setResultBtn(currentBtnObj.btn);
-        setRemaining([val, val2]);
+        setResultBtn({
+          btn: currentBtnObj.btn,
+          remainingTime: [val, val2],
+        });
         timer.reset();
         timer.stop();
         setIschanged(true);
@@ -117,8 +118,7 @@ const Timer: React.FC = () => {
     setCurrentInterval,
     handleClickStart,
     handleClickStop,
-    setResultBtn,
-    setRemaining
+    setResultBtn
   );
 
   useEffect(() => {

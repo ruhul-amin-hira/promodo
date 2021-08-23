@@ -25,36 +25,35 @@ const Report = (props: Props) => {
     localSt = JSON.parse(isStorage);
   }
 
-  const { setIsOpen, resultBtn, setResultBtn, remaining, finalObj } =
-    useContext(TimerContext);
+  const { setIsOpen, resultBtn, finalObj } = useContext(TimerContext);
 
   const [clear, setClear] = useState(false);
-
+  console.log(resultBtn);
   useEffect(() => {
-    if (resultBtn.length > 0) {
-      if (resultBtn == tab[0].id && remaining.length == 0) {
+    if (resultBtn.remainingTime.length >= 0) {
+      if (resultBtn.btn == tab[0].id && resultBtn.remainingTime.length == 0) {
         localSt.working = localSt.working + finalObj.pomodoro;
       }
-      if (resultBtn == tab[0].id && remaining.length != 0) {
-        localSt.working = localSt.working + remaining[0];
+      if (resultBtn.btn == tab[0].id && resultBtn.remainingTime.length != 0) {
+        localSt.working = localSt.working + resultBtn.remainingTime[0];
       }
 
-      if (resultBtn == tab[1].id && remaining.length == 0) {
+      if (resultBtn.btn == tab[1].id && resultBtn.remainingTime.length == 0) {
         localSt.short = localSt.short + finalObj.shortBreak;
       }
-      if (resultBtn == tab[1].id && remaining.length != 0) {
-        localSt.short = localSt.short + remaining[0];
+      if (resultBtn.btn == tab[1].id && resultBtn.remainingTime.length != 0) {
+        localSt.short = localSt.short + resultBtn.remainingTime[0];
       }
 
-      if (resultBtn == tab[2].id && remaining.length == 0) {
+      if (resultBtn.btn == tab[2].id && resultBtn.remainingTime.length == 0) {
         localSt.long = localSt.long + finalObj.longBreak;
       }
-      if (resultBtn == tab[2].id && remaining.length != 0) {
-        localSt.long = localSt.long + remaining[0];
+      if (resultBtn.btn == tab[2].id && resultBtn.remainingTime.length != 0) {
+        localSt.long = localSt.long + resultBtn.remainingTime[0];
       }
       localStorage.setItem("totalTime", JSON.stringify(localSt));
     }
-  }, [resultBtn, remaining]);
+  }, [resultBtn]);
 
   const handleClear = () => {
     localSt = {

@@ -15,12 +15,11 @@ const useTimerFn = (
   setCurrentInterval: any,
   handleClickStart: (a?: number) => void,
   handleClickStop: () => void,
-  setResultBtn: any,
-  setRemaining: any
+  setResultBtn: any
 ) => {
   return () => {
-    setResultBtn(currentBtn);
-    setRemaining([]);
+    // console.log(currentInterval);
+
     /* if (currentBtn == times[0] && currentInterval != 0)
           setCurrentInterval(currentInterval - 1); */
 
@@ -78,6 +77,11 @@ const useTimerFn = (
     } else if (!finalObj.autoStartBreak && !finalObj.autoStartPomo) {
       handleClickStop();
     }
+
+    setResultBtn({
+      btn: currentBtn,
+      remainingTime: [],
+    });
   };
 };
 

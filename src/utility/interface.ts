@@ -20,6 +20,11 @@ export interface TimerObj {
   color: string;
 }
 
+export interface ResutBtn {
+  btn: string;
+  remainingTime: number[];
+}
+
 export interface TimerType {
   currentTime: number;
   isOpen: boolean;
@@ -34,10 +39,8 @@ export interface TimerType {
   setUpdate: any;
   currentInterval: number;
   setCurrentInterval: any;
-  resultBtn: string;
-  setResultBtn: React.Dispatch<React.SetStateAction<string>>;
-  remaining: number[];
-  setRemaining: any;
+  resultBtn: ResutBtn;
+  setResultBtn: any;
   notification: boolean;
   setNotification: React.Dispatch<React.SetStateAction<boolean>>;
   currentBtnObj: TimerObj;

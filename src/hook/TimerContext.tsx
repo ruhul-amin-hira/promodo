@@ -51,22 +51,11 @@ const TimerContextProvider: FC = (props) => {
   const [rorSetting, setRorSetting] = useState("");
   const [update, setUpdate] = useState(false);
   const [currentInterval, setCurrentInterval] = useState(0);
-  const [resultBtn, setResultBtn] = useState("");
-  const [remaining, setRemaining] = useState([]);
+  const [resultBtn, setResultBtn] = useState({
+    btn: "",
+    remainingTime: [],
+  });
   const [notification, setNotification] = useState(finalObj.notification);
-
-  /*   useEffect(() => {
-    switch (currentBtn) {
-      case `${tab[0].id}`:
-        setCurrentTime(finalObj.pomodoro);
-        break;
-      case `${tab[1].id}`:
-        setCurrentTime(finalObj.shortBreak);
-        break;
-      default:
-        setCurrentTime(finalObj.longBreak);
-    }
-  }, [currentBtn]); */
 
   const obj: TimerType = {
     currentTime: currentTime,
@@ -84,8 +73,6 @@ const TimerContextProvider: FC = (props) => {
     setCurrentInterval,
     resultBtn,
     setResultBtn,
-    remaining,
-    setRemaining,
     notification,
     setNotification,
     currentBtnObj,
