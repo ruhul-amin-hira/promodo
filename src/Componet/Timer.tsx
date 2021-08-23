@@ -64,7 +64,7 @@ const Timer: React.FC = () => {
     if (currentBtnObj.btn == times[0]) {
       setCurrentInterval(currentInterval + 1);
     }
-    if (currentInterval == finalObj.longBreakInterval) {
+    if (currentInterval >= finalObj.longBreakInterval) {
       setCurrentInterval(0);
     }
   };

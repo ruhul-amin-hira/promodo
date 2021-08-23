@@ -8,7 +8,7 @@ export const notifyMe = (
 ) => {
   var notification = new Notification("Promodoro", {
     body: `${time} ${units} remaining of ${currentBtn}`,
-    icon: "../image/circular-clock.png",
+    icon: "https://img.icons8.com/color/48/000000/clock--v4.png",
   });
   a.play();
   notification.onclick = function () {
